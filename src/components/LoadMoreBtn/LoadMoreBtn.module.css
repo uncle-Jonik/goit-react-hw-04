@@ -1,0 +1,21 @@
+.LoadMoreBtnBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.LoadMoreBtnBox > button {
+  padding: 10px 35px;
+
+  color: #7c7c7c;
+  border: 2px solid #7c7c7c;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 3px 3px 0px #7c7c7c;
+
+  transition: all 200ms ease-in-out;
+}
+
+.headerForm > button:hover {
+  transform: translateX(3px) translateY(3px);
+  box-shadow: 0px 0px 0px #7c7c7c;
+}

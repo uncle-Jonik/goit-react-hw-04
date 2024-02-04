@@ -1,0 +1,23 @@
+.photoCard {
+  padding: 0 35px;
+  margin-bottom: 35px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+.photoCard > li {
+  width: 400px;
+  height: 400px;
+
+  border-radius: 3px;
+  border: 2px solid #7c7c7c;
+  box-shadow: 3px 3px 0px #7c7c7c;
+
+  transition: all 200ms ease-in-out;
+}
+.photoCard > li:hover {
+  transform: translateX(3px) translateY(3px);
+  box-shadow: 0px 0px 0px #7c7c7c;
+}

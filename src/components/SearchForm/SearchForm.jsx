@@ -1,3 +1,4 @@
+import css from './SearchForm.module.css';
 import toast from 'react-hot-toast';
 
 export const SearchForm = ({ onSearch }) => {
@@ -12,10 +13,14 @@ export const SearchForm = ({ onSearch }) => {
     e.target.reset();
   };
 
+  const handleScrol = e => {
+    console.dir(e);
+  };
+
   return (
     <>
-      <header>
-        <form onSubmit={hendelSubmit}>
+      <header onScrollCapture={handleScrol} className={css.headerBox}>
+        <form className={css.headerForm} onSubmit={hendelSubmit}>
           <input
             type="text"
             autoComplete="off"

@@ -1,0 +1,6 @@
+.modalWindow {
+  left: 61vh;
+  top: 7vh;
+  position: fixed;
+  width: 800px;
+}

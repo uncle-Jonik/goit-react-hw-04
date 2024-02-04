@@ -1,24 +1,17 @@
-import { SearchForm } from './SearchForm';
+import css from './App.module.css';
+
+import { SearchForm } from './SearchForm/SearchForm';
 import { useEffect, useState } from 'react';
-import { ImageGallery } from './ImageGallery';
-import { Loader } from './Loader';
+import { ImageGallery } from './ImageGallery/ImageGallery';
+import { Loader } from './Loader/Loader';
 import { Toaster } from 'react-hot-toast';
-import { LoadMoreBtn } from './LoadMoreBtn';
+import { LoadMoreBtn } from './LoadMoreBtn/LoadMoreBtn';
 import { nanoid } from 'nanoid';
 import { feach } from './api';
 import Modal from 'react-modal';
-import { ImageModal } from './ImageModal';
+import { ImageModal } from './ImageModal/ImageModal';
+import { ErrorMessage } from './ErrorMessage/ErrorMessage';
 
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
 Modal.setAppElement('#root');
 
 export const App = () => {
@@ -76,18 +69,18 @@ export const App = () => {
   return (
     <>
       <SearchForm onSearch={searchImages} />
-      {error && <b>ERROR!!!!</b>}
+      {error && <ErrorMessage />}
       {data.length > 0 && <ImageGallery fechResult={data} onClick={openModal} />}
       {loading && <Loader />}
       {data.length > 0 && !loading && totalPage !== page && (
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
-      <Toaster />
+      <Toaster position="bottom-center" reverseOrder={false} />
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
-        style={customStyles}
         contentLabel="Example Modal"
+        className={css.modalWindow}
       >
         <ImageModal fechResult={dataModal} />
       </Modal>

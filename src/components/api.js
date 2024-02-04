@@ -6,7 +6,8 @@ export const feach = async (query, page) => {
       query,
       page,
       client_id: 'v-NocWjoOb_LPFFOM7qt5Kaj1nLlaip-hwBUmam8J4Y',
-      per_page: 1,
+      per_page: 5,
+      orientation: 'squarish',
     },
   });
   return response.data;
